@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "1234:5000"
+    networks:
+      - N2
+    volumes:
+      - t1:/home
+    container_name: py_container_task2
+    image: py_image_task2
+    restart: on-failure
+    command: ["sleep","infinity"]
+  
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'dhruv'
+      MYSQL_PASSWORD: 'dhruv'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - "3002:3306"
+    volumes:
+      - t1:/var/lib/mysql
+    networks:
+      - N2
+    container_name: mysql_container_task2
+
+volumes:
+  t1:
+    name: task1_t1
+    external: true 
+networks:
+  N2:
+    name: task1_N1
+    external: true
+  
