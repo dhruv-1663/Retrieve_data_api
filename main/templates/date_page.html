@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <form action="/execute_query" method="post">
+        <label for="start">Start (date and time):</label>
+        <input type="datetime-local" id="start" name="start" min="2014-04-01T00:00" max="2014-09-30T23:59">
+        <br>
+        <label for="end">End (date and time):</label>
+        <input type="datetime-local" id="end" name="end" min="2014-04-01T00:00" max="2014-09-30T23:59">
+        <br>
+        <input type="submit">
+      </form>
+</body>
+</html>

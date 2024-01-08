@@ -1,1 +1,3 @@
 flask
+sqlalchemy==1.4
+dask[complete]
